@@ -1,8 +1,10 @@
 import aiosqlite
 
+from config import DB_NAME
+
 
 class AsyncDatabase:
-    def __init__(self, db_file="sqlite3.db"):
+    def __init__(self, db_file=DB_NAME):
         self.db_file = db_file
 
     async def __aenter__(self):
