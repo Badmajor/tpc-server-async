@@ -7,3 +7,14 @@
 * Запуск клиентов в фоне
 
 #### Запуск 
+Для запуска необходим [poetry](https://python-poetry.org/)
+* Установка окружения
+```
+poetry shell
+poetry install
+```
+* Запуск
+
+```
+python main.py
+```
