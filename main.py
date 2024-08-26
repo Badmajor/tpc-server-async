@@ -2,7 +2,7 @@ import asyncio
 import logging
 
 from client import client
-from config import HOST, PORT
+from config import HOST, PORT, AMOUNT_CLIENTS
 from server import server_is_healthy, start_server
 
 logging.basicConfig(level=logging.INFO)
@@ -17,7 +17,7 @@ async def main():
         logger.info("Server is not ready for connections")
         await asyncio.sleep(1)
 
-    client_tasks = [client() for _ in range(10)]
+    client_tasks = [client() for _ in range(AMOUNT_CLIENTS)]
 
     await asyncio.gather(*client_tasks)
 
